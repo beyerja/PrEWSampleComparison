@@ -65,7 +65,10 @@ def main():
       ax.set_xlabel(label_dict[coord], ha='right', x=1.0)
       ax.set_ylabel(r"$d\sigma$ [fb$^{-1}$]", ha='right', y=1.0)
       
-      ax.legend(loc=0)
+      title = r"""$P_{{e^{{-}}}}=${0}
+$P_{{e^{{+}}}}=${1}""".format(eM_chirality,
+                                                                 eP_chirality)
+      ax.legend(loc=0, title=title)
       fig.savefig("{}/{}.pdf".format(output_path,coord))
       plt.close()
   
